@@ -70,7 +70,7 @@ export default function SignUp() {
   return (
     <>
     {sign && 
-        <div className="w-1/3 h-3/4">
+        <div className="w-1/3 h-auto">
         <form onSubmit={handleSignUp} className="w-full h-fit bg-gray-200 py-4 px-8 rounded shadow-2xl">
             <div className="w-full flex flex-col items-center mb-6">
                 <Image
