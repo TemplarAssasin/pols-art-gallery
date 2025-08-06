@@ -122,13 +122,13 @@ export default function CardContainer() {
                     
                     <button 
                     onClick={() => setSortAsc(prev => !prev)}
-                    className="w-fit h-fit px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 font-bold shadow-[0px_0px_2px_black] cursor-pointer"
+                    className="gallery-sort w-fit h-fit px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 font-bold shadow-[0px_0px_2px_black] cursor-pointer"
                         >
                     {sortAsc ? <FontAwesomeIcon icon={faArrowUpAZ}/>: <FontAwesomeIcon icon={faArrowDownAZ}/>}
                     </button>
                     
                     <select
-                            className="w-fit h-fit shadow-[0px_0px_2px_black] px-3 py-2  bg-gray-300 rounded-md font-bold text-base  cursor-pointer"
+                            className="gallery-filter w-fit h-fit shadow-[0px_0px_2px_black] px-3 py-2  bg-gray-300 rounded-md font-bold text-base  cursor-pointer"
                             onChange={(e) =>
                                 setFilterDate(e.target.value === "all" ? null : e.target.value)
                             }
@@ -146,13 +146,13 @@ export default function CardContainer() {
         <div>
         <FontAwesomeIcon 
             icon={faPlus} 
-            className="text-gray-800 text-3xl cursor-pointer z-98 hover:text-black hover:scale-110 transition-all ease-in-out duration-300" 
+            className="gallery-add text-gray-800 text-3xl cursor-pointer z-98 hover:text-black hover:scale-110 transition-all ease-in-out duration-300" 
             onClick={() => setAdd(!add)}/>
         {add && <Form />}
         </div>
         </div>
         <div 
-            className="text-3xl font-bold place-items-center w-full p-4  grid grid-cols-4 gap-4 grid-rows-2 grid-flow-row auto-rows-auto">
+            className="gallery-container text-3xl font-bold place-items-center w-full p-4  grid grid-cols-4 gap-4 grid-rows-2 grid-flow-row auto-rows-auto">
         { isLoading ? "Loading..." :  
         currentCards.length === 0 ? "No artworks yet" :  
         (

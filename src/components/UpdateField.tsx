@@ -31,14 +31,14 @@ export default function EditField({field, id, onClose,} : EditTypes){
                             type="text" 
                             onChange={(e) => setUpdate({...update, title: e.target.value})}
                             placeholder="Enter new title"
-                            className=" font-light px-2 py-1 w-full border text-xl rounded"/>
+                            className="edit-input font-light px-2 py-1 w-full border text-xl rounded"/>
                     </div>
                     )
                 case "date": 
                     return (
                     <div>
                         <input type="date" name="" id="" 
-                            className="border w-full px-2 py-1 rounded font-light text-xl"
+                            className="edit-input border w-full px-2 py-1 rounded font-light text-xl"
                         onChange={(e) => {setUpdate({...update, date:e.target.value})}}/>
                     </div>
                 );
@@ -46,7 +46,7 @@ export default function EditField({field, id, onClose,} : EditTypes){
                     return (
                     <div>
                         <textarea name="" id="" rows={5} maxLength={700}
-                            className="font-medium resize-none text-base w-full border rounded p-2"
+                            className="edit-text font-medium resize-none text-base w-full border rounded p-2"
 
                             placeholder="Enter New Description Here..." onChange={(e) => setUpdate({...update, description: e.target.value})}></textarea>
                     </div>);
@@ -60,7 +60,7 @@ export default function EditField({field, id, onClose,} : EditTypes){
                             setFileName(file.name);
                             }
                         }}  />
-                        <label htmlFor="updateFile" title={fileName} className="overflow-x-hidden cursor-pointer text-center text-base font-light border py-1 px-1.5 rounded w-[90%]">{fileName}</label>
+                        <label htmlFor="updateFile" title={fileName} className="edit-input overflow-x-hidden cursor-pointer text-center text-base font-light border py-1 px-1.5 rounded w-[90%]">{fileName}</label>
                     </div>
                     );
                 default:
@@ -87,22 +87,22 @@ export default function EditField({field, id, onClose,} : EditTypes){
 
      return (
         <div 
-            className="w-85 h-auto gap-2 flex flex-col absolute z-50 top-10 right-10 bg-white 
+            className="edit-container w-85 h-auto gap-2 flex flex-col absolute z-50 top-10 right-10 bg-white 
             shadow-[0px_0px_5px_gray] py-4 px-5 rounded ">
             <button 
                 onClick={onClose} 
-                className="absolute right-1.5 top-1 text-base hover:scale-130 text-shadow-2xs transition-all 
+                className="edit-close absolute right-1.5 top-1 text-base hover:scale-130 text-shadow-2xs transition-all 
                             ease-in-out duration-300 cursor-pointer">❌
             </button>
             <p 
-                className="font-bold text-xl  uppercase w-full ">Edit {field}
+                className="edit-title font-bold text-xl  uppercase w-full ">Edit {field}
             </p>
 
             {selectedField()}
 
             <button 
                 onClick={() => handleEdit(id)} 
-                className="cursor-pointer text-base font-semibold mt-2 mx-20 px-3 py-1 bg-blue-800
+                className="edit-btn cursor-pointer text-base font-semibold mt-2 mx-20 px-3 py-1 bg-blue-800
                  text-white rounded hover:bg-blue-950 hover:font-bold transition-all ease-in-out 
                     duration-300">Save
             </button>

@@ -132,35 +132,35 @@ export default function Account() {
 
   return (
      <>{!userData ? 
-      (<div className="w-full h-screen grid place-items-center">
+      (<div className="w-full h-auto grid place-items-center">
         <p className="text-5xl font-bold">Loading...</p>
       </div>) :
       (
-      <div className=" relative w-full my-5 p-4">
+      <div className="account-mainparent relative w-full my-5 p-4">
         <div className="flex justify-between">
-          <h1 className="text-3xl font-extrabold uppercase">Account Profile</h1>
+          <h1 className="account-title text-3xl font-extrabold uppercase">Account Profile</h1>
           <button 
                 onClick={handleLogout}
                 title="logout"
-                className=" px-2 py-1.5 text-gray-800 font-bold text-2xl rounded  cursor-pointer">
+                className="account-logout px-2 py-1.5 text-gray-800 font-bold text-2xl rounded  cursor-pointer">
                   <FontAwesomeIcon icon={faArrowRightFromBracket}/>
           </button>
         </div>
         <div className="flex gap-8 flex-col w-full  mt-4">
-          <div className="flex w-full h-full  p-4 gap-8 border-b-2 border-gray-600">
-              <div className="w-[18rem] h-[18rem] bg-white grid place-items-center rounded-[50%] shadow-[0px_0px_3px_black]">
-                <div className="relative w-full h-full  ">
+          <div className="account-up flex w-full h-full  p-4 gap-8 border-b-2 border-gray-600">
+              <div className=" bg-white  rounded-[50%] shadow-[0px_0px_3px_black]">
+                <div className="account-profile grid place-items-center relative w-full h-full">
                   <Image
                     src={userData?.profile_url || '/brush.png'}
                     alt=""
                     priority
-                    width={200}
-                    height={200}
-                    className="bg-white rounded-[50%] w-full h-full p-1" />
+                    width={280}
+                    height={280}
+                    className="account-prof bg-white rounded-[50%] p-1" />
                   <FontAwesomeIcon 
                     icon={faCamera} 
                     onClick={changeProfile}
-                    className="absolute cursor-pointer border-r-1 border-b-1  border-gray-400 bg-white rounded-[50%] shadow-2xl text-2xl px-2 py-2.5 bottom-9 right-2.5 hover:bg-gray-200 transition-all"/>
+                    className="account-camera absolute cursor-pointer border-r-1 border-b-1  border-gray-400 bg-white rounded-[50%] shadow-2xl text-2xl px-2 py-2.5 bottom-9 right-2.5 hover:bg-gray-200 transition-all"/>
                    <input
                     type="file"
                     accept="image/*"
@@ -173,29 +173,29 @@ export default function Account() {
 
               <div className=" grow-5 flex flex-col justify-center px-2">
                 <span className=''>
-                  <h3 className="font-light text-xl">Name:</h3>
-                  <p className="font-normal text-xl ">{userData?.first_name + " " + userData?.last_name}</p>
+                  <h3 className="account-label font-light text-xl">Name:</h3>
+                  <p className="account-info font-normal text-xl ">{userData?.first_name + " " + userData?.last_name}</p>
                 </span>
                 <span>
-                  <h3 className="font-light text-xl">Email</h3>
-                  <p className="font-normal text-xl">{userData?.email}</p>
+                  <h3 className="account-label font-light text-xl">Email</h3>
+                  <p className="account-info font-normal text-xl">{userData?.email}</p>
                 </span>
                 <span>
-                  <h3 className="font-light text-xl">Joined on:</h3>
-                  <p className="font-normal text-xl ">{formatDateCreation}</p>
+                  <h3 className="account-label font-light text-xl">Joined on:</h3>
+                  <p className="account-info font-normal text-xl ">{formatDateCreation}</p>
                 </span>
               </div>
-              <div className="relative w-1/4 rounded flex flex-col items-center bg-gray-100 shadow-2xl">
-                  <div className="w-full h-full flex flex-col justify-center items-center text-center p-2 text-black text-shadow-2xs">
-                    <h1 className="text-2xl font-extrabold uppercase break-words">Total Artworks</h1>
-                    <p className="text-7xl font-bold">{countData}</p>
+              <div className="account-countcontainer relative w-1/4 rounded flex flex-col items-center bg-gray-100 shadow-2xl">
+                  <div className=" w-full h-full flex flex-col justify-center items-center text-center p-2 text-black text-shadow-2xs">
+                    <h1 className="account-countxt text-2xl font-extrabold uppercase break-words">Total Artworks</h1>
+                    <p className="account-count text-7xl font-bold">{countData}</p>
                   </div>
               </div>
               
           </div>
           <div className="w-full min-h-[50%] flex flex-col gap-2 px-4">
-            <h1 className="font-bold text-3xl">Recent Artworks:</h1>
-            <div className="w-full h-[40vh] grid grid-rows-1 grid-cols-6 gap-x-2 [&>*]:rounded">
+            <h1 className="account-recenttitle font-bold text-3xl">Recent Artworks:</h1>
+            <div className="account-recents w-full h-fit grid  grid-flow-row auto-rows-auto grid-cols-[repeat(6,1fr)] gap-x-2 [&>*]:rounded">
               { getData?.map((data:any) => {
                 return (
                 <Card
