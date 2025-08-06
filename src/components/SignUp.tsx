@@ -131,8 +131,7 @@ export default function SignUp() {
                     <FontAwesomeIcon 
                         icon={showPass? faEye : faEyeLowVision} 
                         className="show-pass absolute right-4 bottom-4 cursor-pointer text-sm text-gray-600" 
-                        onMouseDown={() => setShowPass(!showPass)} 
-                        onMouseUp={() => setShowPass(!showPass)}
+                        onClick={() => setShowPass(!showPass)} 
                     />
                 </div>
 
@@ -149,8 +148,7 @@ export default function SignUp() {
                     <FontAwesomeIcon 
                         icon={showcPass? faEye : faEyeLowVision} 
                         className="show-pass absolute right-4 bottom-6 cursor-pointer text-sm text-gray-600" 
-                        onMouseDown={() => setcShowPass(!showcPass)} 
-                        onMouseUp={() => setcShowPass(!showcPass)}
+                        onClick={() => setcShowPass(!showcPass)} 
                     />
                 </div>
                 
