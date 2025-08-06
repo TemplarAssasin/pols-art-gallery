@@ -70,7 +70,7 @@ export default function SignUp() {
   return (
     <>
     {sign && 
-        <div className="w-1/3 h-auto">
+        <div className="signup-container h-auto">
         <form onSubmit={handleSignUp} className="w-full h-fit bg-gray-200 py-4 px-8 rounded shadow-2xl">
             <div className="w-full flex flex-col items-center mb-6">
                 <Image
@@ -79,21 +79,22 @@ export default function SignUp() {
                 priority
                 width={100}
                 height={100}
+                className='signup-image'
                 />
-                <h1 className='text-3xl font-extrabold'>Sign Up</h1>
+                <h1 className='signup-title text-3xl font-extrabold'>Sign Up</h1>
             </div>
             <div>
-                <label htmlFor="fName" className="block" >First Name</label>
+                <label htmlFor="fName" className="block label-txt" >First Name</label>
                 <input 
                     type="text" 
                     id="fName"
                     pattern="[A-Za-z\s]+"
                     placeholder='Enter first name'
-                    className='border w-full px-2 py-1 mb-2 rounded'
+                    className='input-box border w-full px-2 py-1 mb-2 rounded'
                     onChange={(e) => (setUserInfo(prev => ({...prev, fName:e.target.value})))}
                 />
 
-                <label htmlFor="lName" className="block">Last Name</label>
+                <label htmlFor="lName" className="block label-txt">Last Name</label>
                 <input 
                     type="text" 
                     id="lName" 
@@ -101,22 +102,22 @@ export default function SignUp() {
                     placeholder='Enter last name'
                     required
                     maxLength={20}
-                    className='border w-full px-2 py-1 mb-2 rounded'
+                    className='input-box border w-full px-2 py-1 mb-2 rounded'
                     onChange={(e) => (setUserInfo(prev => ({...prev, lName:e.target.value})))}
                 />
                 
-                <label htmlFor="username" className="block">Email</label>
+                <label htmlFor="username" className="block label-txt">Email</label>
                 <input 
                     type="email" 
                     id="username" 
                     required
                     placeholder='Enter email'
-                    className='border w-full px-2 py-1 mb-2 rounded'
+                    className='input-box border w-full px-2 py-1 mb-2 rounded'
                     onChange={(e) => (setUserInfo(prev => ({...prev, email:e.target.value})))}
                 />
 
                 <div className="relative w-full h-auto" >
-                <label htmlFor="password" className="block">Password</label>
+                <label htmlFor="password" className="block label-txt">Password</label>
                 <input 
                     type={`${showPass? 'text': 'password'}`}
                     id="password"
@@ -124,38 +125,38 @@ export default function SignUp() {
                     minLength={8}
                     maxLength={12}
                     placeholder='Enter password'
-                    className='border w-full px-2 py-1 mb-2 rounded' 
+                    className='input-box border w-full px-2 py-1 mb-2 rounded' 
                     onChange={(e) => (setUserInfo(prev => ({...prev, password:e.target.value})))}
                 />
                     <FontAwesomeIcon 
                         icon={showPass? faEye : faEyeLowVision} 
-                        className="absolute right-4 bottom-4 cursor-pointer text-sm text-gray-600" 
+                        className="show-pass absolute right-4 bottom-4 cursor-pointer text-sm text-gray-600" 
                         onMouseDown={() => setShowPass(!showPass)} 
                         onMouseUp={() => setShowPass(!showPass)}
                     />
                 </div>
 
                 <div className="relative w-full h-auto ">
-                    <label htmlFor="confirm-password" className="block">Confirm password</label>
+                    <label htmlFor="confirm-password" className="block label-txt">Confirm password</label>
                     <input 
                         type={`${showcPass? 'text': 'password'}`}
                         id="confirm-password"
                         placeholder='Confirm password'
                         required
-                        className='border w-full px-2 py-1 mb-4 rounded' 
+                        className='input-box border w-full px-2 py-1 mb-4 rounded' 
                         onChange={(e) => (setUserInfo(prev => ({...prev, cPassword:e.target.value})))}
                     />
                     <FontAwesomeIcon 
                         icon={showcPass? faEye : faEyeLowVision} 
-                        className="absolute right-4 bottom-6 cursor-pointer text-sm text-gray-600" 
+                        className="show-pass absolute right-4 bottom-6 cursor-pointer text-sm text-gray-600" 
                         onMouseDown={() => setcShowPass(!showcPass)} 
                         onMouseUp={() => setcShowPass(!showcPass)}
                     />
                 </div>
                 
 
-                <button type="submit" className="w-full px-2 py-1 bg-gray-700 mb-4 text-xl font-bold text-white rounded cursor-pointer hover:bg-gray-600">Sign Up</button>
-                <p className="text-sm mb-4">Have an account already? <button className="underline text-blue-700 hover:text-blue-900 cursor-pointer" onClick={() => {setSign(!sign); setLog(!log)}}>Sign Up Here. </button></p>
+                <button type="submit" className="signup-btn w-full px-2 py-1 bg-gray-700 mb-4 text-xl font-bold text-white rounded cursor-pointer hover:bg-gray-600">Sign Up</button>
+                <p className="signup-txt text-sm mb-4">Have an account already? <button className="underline text-blue-700 hover:text-blue-900 cursor-pointer" onClick={() => {setSign(!sign); setLog(!log)}}>Sign Up Here. </button></p>
             </div>
         </form>
     

@@ -7,3 +7,203 @@
 body{
   @apply w-[95%] mx-auto
 }
+
+
+/* Login Page */
+
+@layer utilities {
+  @media (min-width:769px) and (max-width:1024px) {
+    .login-container{
+      @apply w-82 ;
+    }
+  }
+
+  @media (min-width:426px) and (max-width:768px) {
+    .login-container{
+      @apply w-80 ;
+    }
+    .login-text{
+      @apply text-[13px];
+    }
+    .login-button{
+      @apply text-base;
+    }
+  }
+
+  @media (min-width:376px) and (max-width:426px) {
+    .login-container{
+      @apply w-75 ;
+    }
+    .login-text{
+      @apply text-xs;
+    }
+    .login-button{
+      @apply text-[15px];
+    }
+    .login-image{
+      @apply w-20;
+    }
+    .login-title{
+      @apply text-2xl;
+    }
+    .login-input{
+      @apply text-sm;
+    }
+    .login-inputTitle{
+      @apply text-sm;
+    }
+    .show-logpass{
+      @apply text-xs;
+    }
+  }
+  @media (min-width:321px) and (max-width:376px) {
+    .login-container{
+      @apply w-75 ;
+    }
+    .login-text{
+      @apply text-xs;
+    }
+    .login-button{
+      @apply text-[15px];
+    }
+    .login-image{
+      @apply w-20;
+    }
+    .login-title{
+      @apply text-2xl;
+    }
+    .login-input{
+      @apply text-sm;
+    }
+    .login-inputTitle{
+      @apply text-sm;
+    }
+    .show-logpass{
+      @apply text-xs;
+    }
+  }
+  @media (min-width:0px) and (max-width:321px) {
+      .login-container{
+      @apply w-70 ;
+    }
+    .login-text{
+       @apply text-[11px];
+    }
+    .login-button{
+      @apply text-[15px];
+    }
+    .login-image{
+      @apply w-20;
+    }
+    .login-title{
+      @apply text-2xl;
+    }
+    .login-input{
+      @apply text-sm;
+    }
+    .login-inputTitle{
+      @apply text-[13px];
+    }
+    .show-logpass{
+      @apply text-xs;
+    }
+  }
+}
+
+/* SignUp Page */
+
+@layer utilities {
+  @media (min-width:769px) and (max-width:1024px) {
+    .signup-container{
+      @apply w-82 ;
+    }
+  }
+
+  @media (min-width:426px) and (max-width:768px) {
+    .signup-container{
+      @apply w-80 ;
+    }
+  }
+
+  @media (min-width:375px) and (max-width:426px) {
+    .signup-container{
+      @apply w-75 ;
+    }
+    .signup-image{
+      @apply w-25;
+    }
+    .signup-title{
+      @apply text-2xl;
+    }
+    .label-txt{
+      @apply text-xs;
+    }
+    .input-box{
+      @apply text-xs mb-2.5;
+    }
+    .signup-btn{
+      @apply text-sm;
+    }
+    .signup-txt{
+      @apply text-xs;
+    }
+    .show-pass{
+      @apply text-xs bottom-4 right-3;
+    }
+
+  }
+
+  @media (min-width:321px) and (max-width:376px) {
+    .signup-container{
+      @apply w-75 ;
+    }
+    .signup-image{
+      @apply w-25;
+    }
+    .signup-title{
+      @apply text-2xl;
+    }
+    .label-txt{
+      @apply text-xs;
+    }
+    .input-box{
+      @apply text-xs mb-2.5;
+    }
+    .signup-btn{
+      @apply text-sm;
+    }
+    .signup-txt{
+      @apply text-xs;
+    }
+    .show-pass{
+      @apply text-xs bottom-4 right-3;
+    }
+  }
+  @media (min-width:0px) and (max-width:321px) {
+    .signup-container{
+      @apply w-70 ;
+    }
+    .signup-image{
+      @apply w-25;
+    }
+    .signup-title{
+      @apply text-2xl;
+    }
+    .label-txt{
+      @apply text-xs;
+    }
+    .input-box{
+      @apply text-xs mb-2.5;
+    }
+    .signup-btn{
+      @apply text-sm;
+    }
+    .signup-txt{
+      @apply text-[11px];
+    }
+    .show-pass{
+      @apply text-xs bottom-4 right-3;
+    }
+
+  }
+}

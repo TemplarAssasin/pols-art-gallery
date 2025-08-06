@@ -64,7 +64,7 @@ export default function Login() {
   return (
     <>
     {log && 
-        <div className="w-1/3 h-4/5">
+        <div className="login-container h-4/5">
         <form onSubmit={handleLogin} className="w-full h-fit bg-gray-200 py-4 px-8 rounded shadow-2xl">
             <div className="w-full flex flex-col items-center mb-8">
                 <Image
@@ -73,39 +73,40 @@ export default function Login() {
                 width={100}
                 height={100}
                 priority
+                className="login-image"
                 />
-                <h1 className="text-3xl font-extrabold">Sign In</h1>
+                <h1 className="login-title text-3xl font-extrabold">Sign In</h1>
             </div>
             <div>
-                <label htmlFor="username" className="block">Email</label>
+                <label htmlFor="username" className="block login-inputTitle">Email</label>
                 <input 
                     type="email" 
                     id="username"
                     placeholder="Enter your email" 
-                    className='border w-full px-2 py-1 mb-4 rounded'
+                    className='login-input border w-full px-2 py-1 mb-4 rounded'
                     onChange={(e) => {setLoginInfo(prev => ({...prev, email:e.target.value}))}}
                 />
                 <div className="relative h-fit">
-                <label htmlFor="password" className="block">Password</label>
+                <label htmlFor="password" className="block login-inputTitle">Password</label>
                 <input 
                     type={`${showPass? "text" : "password"}`}
                     id="password"
                     placeholder="Enter password" 
-                    className='border w-full px-2 py-1 mb-4 rounded'
+                    className='login-input border w-full px-2 py-1 mb-4 rounded'
                     onChange={(e) => {setLoginInfo(prev => ({...prev, password:e.target.value}))}}
                 />
                 <FontAwesomeIcon 
                     icon={showPass? faEye: faEyeLowVision}
                     onClick={() => setShowPass(!showPass)}
-                    className="absolute right-4 bottom-6 cursor-pointer text-sm text-gray-600"
+                    className="show-logpass absolute right-4 bottom-6 cursor-pointer text-sm text-gray-600"
                     />
                 </div>
                 <button 
                     type="submit" 
-                    className="w-full text-xl font-bold text-white px-2 py-1 bg-gray-700 mb-4 rounded hover:bg-gray-600 cursor-pointer">Login
+                    className="login-button w-full text-xl font-bold text-white px-2 py-1 bg-gray-700 mb-4 rounded hover:bg-gray-600 cursor-pointer">Login
                 </button>
                 
-                <p className="text-sm mb-4">Don't have an account yet? 
+                <p className="login-text text-sm mb-4">Don't have an account yet? &nbsp;
                     <button 
                         className="underline text-blue-700 hover:text-blue-900 cursor-pointer" 
                         onClick={() => {setSign(!sign); setLog(!log)}}>Sign Up Here. 
