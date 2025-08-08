@@ -85,7 +85,8 @@ export default function PopCard({
                     onClick={() => {setIsImageFull(true)}}></FontAwesomeIcon>
                     
                 {isImageFull && (
-                    <div className="fixed flex items-center justify-center  inset-0 backdrop-blur-lg">
+
+                    <div className="fixed flex items-center justify-center inset-0 backdrop-blur-lg">
                         <div className=" w-[80%] h-[80%] relative">
                             <Image
                             src={image_url}

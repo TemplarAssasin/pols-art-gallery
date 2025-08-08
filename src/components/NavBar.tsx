@@ -48,7 +48,7 @@ export default function Nav() {
               </li>
             </Link>
             <Link href="/account" onClick={() => handleSelect('account')}>
-              <li className="relative group">Account 
+              <li className="relative group">Profile 
                 <span className={`max-md:hidden group-hover:w-full transition-all duration-250 ease-in-out absolute bottom-0 left-0 ${select === 'account' ? 'w-full': 'w-0'} h-0.5 bg-gray-700 `} />
               </li>
             </Link>
