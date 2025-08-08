@@ -5,7 +5,7 @@ import About from '../about/page'
 export default function Hero() {
   return (
     <>
-    <div className="h-screen flex max-sm:h-screen max-sm:flex-col-reverse max-sm:justify-center max-sm:pt-15 max-sm:items-center max-sm:gap-5 px-4 py-2 gap-2">
+    <div className="h-screen flex max-sm:h-[80vh] max-sm:flex-col-reverse max-sm:justify-center max-sm:pt-15 max-sm:items-center max-sm:gap-5 px-4 py-2 gap-2">
         <div className="p-2 w-[60%] max-sm:w-full flex justify-center items-center flex-col">
             <h1 className="max-sm:text-2xl sm:text-xl md:text-2xl lg:text-3xl font-bold text-shadow-2xs">Hi There!</h1>
             <h1 className="max-sm:text-[16px] sm:text-xl md:text-2xl lg:text-3xl font-bold text-shadow-2xs"> Welcome to Pol's Art Gallery</h1>

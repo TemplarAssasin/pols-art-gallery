@@ -14,7 +14,7 @@ export default function About() {
     setSelect(prev => ({...prev, id: id, image: image}));
   }
   return (
-      <div className="border-t-1 md:h-screen max-sm:flex-col-reverse sm:flex-col-reverse md:flex-row flex items-center my-5 px-2 py-8 gap-2  ">
+      <div className=" md:h-screen max-sm:flex-col-reverse sm:flex-col-reverse md:flex-row flex items-center my-5 px-2 py-8 gap-2  ">
         <div className="max-sm:w-full max-sm:flex-col sm:flex-row sm:gap-8 sm:w-full w-1/2 h-full flex md:flex-col items-center justify-center gap-2">
             <div className='border-double border-12 border-gray-200 bg-gray-950 rounded-md p-6'>
             <Image
