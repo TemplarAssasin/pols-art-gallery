@@ -50,7 +50,7 @@ export default function PopCard({
                     
                     <ul 
                         ref={dropdownRef} 
-                        className="absolute w-35 right-0 bg-gray-200 p-3 rounded [&>li]:text-sm font-normal [&>li]:text-black
+                        className="max-sm:[&>li]:text-[9px] sm:[&>li]:text-[10px] md:[&>li]:text-xs lg:[&>li]:text-sm absolute max-sm:w-20 sm:w-25 md:w-30 lg:w-35 right-0 bg-gray-200 p-3 rounded  font-normal [&>li]:text-black
                          [&>li]:hover:bg-gray-300 [&>li]:hover:text-black [&>li]:rounded-xs scale-100 transition-all duration-300 
                          ease-in-out [&>li]:cursor-pointer [&>li]:hover:font-semibold [&>li]:hover:text-base
                           [&>li]:px-1 ">
