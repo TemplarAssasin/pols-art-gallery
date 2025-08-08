@@ -38,12 +38,12 @@ export default function PopCard({
         };
     return (
         <article
-            className="fixed inset-0 top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-49 w-[70%] h-[80%] bg-white rounded shadow-2xl
+            className="overflow-auto max-sm:w-[75%] max-sm:h-[50%] sm:w-[60%] sm:h-[60%] md:w-[60%] md:h-[70%] lg:w-[70%] lg:h-[80%] fixed inset-0 top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-49  bg-white rounded shadow-2xl
             ">
             <div className="absolute right-3 top-2">               
                 <FontAwesomeIcon 
                     icon={faPenToSquare} 
-                    className=" text-2xl peer cursor-pointer text-gray-800 hover:text-gray-900 hover:scale-120 transition-all ease-in-out duration-300"
+                    className="max-sm:text-sm sm:text-base md:text-xl lg:text-2xl  peer cursor-pointer text-gray-800 hover:text-gray-900 hover:scale-120 transition-all ease-in-out duration-300"
                     onClick={() => {setIsOpen(!isOpen)}}
                     />
                 {isOpen &&(
@@ -64,24 +64,25 @@ export default function PopCard({
             </div>
             {activeEditField && <EditField onClose={() => setActiveEditField(null)} id={id} field={activeEditField} />}
             
-            <div className=" overflow-hidden grid grid-rows-8 gap-x-4 grid-cols-4 p-4 w-full h-full">
+            <div className="max-sm:flex max-sm:flex-col  max-sm:h-fit overflow-auto grid grid-rows-8 gap-x-4 grid-cols-4 p-4 w-full h-full">
                 <div className="col-start-3 col-end-[-1] row-start-1 row-end-3 text-center self-center justify-self-center">
-                    <p className="pop-title text-2xl font-bold">{title}</p>
-                    <p className="pop-date text-base font-normal">{formatDate(date)}</p>
+                    <p className="max-sm:text-sm sm:text-base md:text-xl lg:text-4xl font-bold">{title}</p>
+                    <p className="max-sm:mb-2 max-sm:text-xs sm:text-xs md:text-sm lg:text-base font-normal">{formatDate(date)}</p>
                 </div>
-                <div className=" row-start-3 row-end-[-1] col-start-3 col-end-[-1]">
-                    <p className=" font-light break-words text-base indent-8 text-justify p-4 h-full">
-                    {description}
-                    </p>
-                </div>
+                
                 <Image
                     src={image_url}
                     alt=""
                     width={500}
                     height={500}
                     priority
-                    className="w-full h-full row-start-1 row-end-[-1] col-span-2 rounded object-cover"
+                    className="max-sm:self-center max-sm:w-[250px] max-sm:h-[220px] sm:sticky top-0 w-full h-full row-start-1 row-end-[-1] col-span-2 rounded object-cover"
                 />
+                <div className=" row-start-3 row-end-[-1] col-start-3 col-end-[-1]">
+                    <p className="max-sm:mt-5 max-sm:px-2 max-sm:text-[10px] sm:text-[10px] md:text-xs lg:text-sm font-light break-words  indent-8 text-justify px-3 h-full">
+                    {description}
+                    </p>
+                </div>
             </div>
         </article>
     )
