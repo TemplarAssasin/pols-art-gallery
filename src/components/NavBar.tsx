@@ -20,15 +20,14 @@ export default function Nav() {
             alt=""
             width={70}
             height={70}
-            className="nav-image"
+            className="max-sm:w-[55px] sm:w-[60px] md:w-[65px] lg:w-[70px]"
           />
         </Link>
-        <h1 className="nav-title text-3xl font-bold">Pol's Art Gallery</h1>
+        <h1 className="max-sm:text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">Pol's Art Gallery</h1>
       </div>
 
-      <div className={`
+      <div className={`${menu ? 'translate-x-0' : 'translate-x-full'}
           fixed top-0 right-0 h-screen w-[50vw] bg-white z-50 transition-transform duration-500
-          ${menu ? 'translate-x-0' : 'translate-x-full'}
           md:static md:flex md:translate-x-0 md:bg-transparent md:h-auto md:w-auto md:p-0
         `}>
         <button 
@@ -37,7 +36,7 @@ export default function Nav() {
         >
           ✕
         </button>
-         <ul className="max-md:text-base flex flex-col md:flex-row gap-6 text-xl font-light [&>*]:cursor-pointer [&>*]:decoration-1 mt-16 md:mt-0 px-6">
+         <ul className="max-md:text-base md:text-lg lg:text-xl flex flex-col md:flex-row gap-6  font-light [&>*]:cursor-pointer [&>*]:decoration-1 mt-16 md:mt-0 px-6">
             <Link href="/hero" onClick={() => handleSelect('home')}>
               <li className="relative group">Home 
                 <span className={`max-md:hidden  group-hover:w-full transition-all duration-250 ease-in-out absolute bottom-0 left-0 ${select === 'home' ? 'w-full': 'w-0'} h-0.5 bg-gray-700 `} /> 
@@ -48,11 +47,6 @@ export default function Nav() {
                 <span className={`max-md:hidden group-hover:w-full transition-all duration-250 ease-in-out absolute bottom-0 left-0 ${select === 'gallery' ? 'w-full': 'w-0'} h-0.5 bg-gray-700 `} />
               </li>
             </Link>
-            {/* <Link href="/about" onClick={() => handleSelect('about')}>
-              <li className="relative group">About 
-                <span className={`max-md:hidden group-hover:w-full transition-all duration-250 ease-in-out absolute bottom-0 left-0 ${select === 'about' ? 'w-full': 'w-0'} h-0.5 bg-gray-700 `} />
-              </li>
-            </Link> */}
             <Link href="/account" onClick={() => handleSelect('account')}>
               <li className="relative group">Account 
                 <span className={`max-md:hidden group-hover:w-full transition-all duration-250 ease-in-out absolute bottom-0 left-0 ${select === 'account' ? 'w-full': 'w-0'} h-0.5 bg-gray-700 `} />
