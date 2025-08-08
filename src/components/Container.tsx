@@ -167,8 +167,9 @@ export default function CardContainer() {
         )))
         
         }
-        {state && 
-            <div ref={popCardRef}>
+        {state &&
+            <div className="fixed inset-0 z-1 backdrop-blur-sm">
+                <div  ref={popCardRef}>
                 <PopCard    
                 id={selected?.id} 
                 description={selected?.description} 
@@ -177,6 +178,8 @@ export default function CardContainer() {
                 image_url={selected?.image_url}
                 />
             </div>
+            </div>
+            
         }
         </div>
         
