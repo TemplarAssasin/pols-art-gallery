@@ -81,7 +81,7 @@ export default function PopCard({
                 />
                 <FontAwesomeIcon 
                     icon={faExpand} 
-                    className={`max-sm:left-46 max-sm:top-14 max-sm:scale-45 sm:left-36 sm:top-2.5 sm:scale-50 md:left-44 md:top-4 md:scale-60 lg:text-2xl lg:top-7 lg:left-96 lg:scale-0  ${isImageFull ? 'hover:scale-0 peer-hover:scale-0 scale-0 pointer-events-none': 'hover:scale-120 peer-hover:scale-100' }  px-1 py-2 rounded-[50%] bg-white  hover:bg-gray-200 ease-in-out duration-350 transition-all text-gray-800 absolute cursor-pointer`}
+                    className={`max-[321px]:left-46 max-[426px]:left-61 max-[376px]:left-56.5 max-sm:top-14 max-sm:scale-45 sm:left-36 sm:top-2.5 sm:scale-50 md:left-44 md:top-4 md:scale-60 lg:text-2xl lg:top-7 lg:left-96 lg:scale-0  ${isImageFull ? 'hover:scale-0 peer-hover:scale-0 scale-0 pointer-events-none': 'hover:scale-120 peer-hover:scale-100' }  px-1 py-2 rounded-[50%] bg-white  hover:bg-gray-200 ease-in-out duration-350 transition-all text-gray-800 absolute cursor-pointer`}
                     onClick={() => {setIsImageFull(true)}}></FontAwesomeIcon>
                     
                 {isImageFull && (
