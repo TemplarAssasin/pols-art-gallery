@@ -3,7 +3,7 @@
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
-    <main className="w-full flex items-center justify-center">
+    <main>
       {children}
     </main>
   );

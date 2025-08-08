@@ -64,57 +64,59 @@ export default function Login() {
   return (
     <>
     {log && 
-        <div className="login-container h-4/5">
-        <form onSubmit={handleLogin} className="w-full h-fit bg-gray-200 py-4 px-8 rounded shadow-2xl">
-            <div className="w-full flex flex-col items-center mb-8">
+        <div>
+        <form 
+            onSubmit={handleLogin} 
+            className="max-sm:w-[20rem] sm:w-[22rem] md:w-[22rem] lg:w-[24rem]
+            py-8 px-8 bg-gray-200 rounded shadow-2xl">
+            <div className="flex flex-col items-center mb-8">   
                 <Image
                 src='/brush.png'
-                alt=""
-                width={100}
-                height={100}
+                alt="logo"
+                width={140}
+                height={140}
                 priority
-                className="login-image"
+                className="max-sm:w-[95px] sm:w-[110px] md:w-[125px] lg:w-[140px]"
                 />
-                <h1 className="login-title text-3xl font-extrabold">Sign In</h1>
+                <h1 className="max-sm:text-xl sm:text-xl md:text-2xl lg:text-3xl 
+                font-extrabold uppercase">Login</h1>
             </div>
             <div>
-                <label htmlFor="username" className="block login-inputTitle">Email</label>
+                <label htmlFor="username" className="max-sm:text-[13px] sm:text-sm md:text-sm lg:text-base block">Email</label>
                 <input 
                     type="email" 
                     id="username"
-                    placeholder="Enter your email" 
-                    className='login-input border w-full px-2 py-1 mb-4 rounded'
+                    placeholder="Enter email here" 
+                    className='max-sm:text-[13px] sm:text-sm md:text-sm lg:text-base border border-gray-500 w-full px-2 py-1 mb-2 rounded'
                     onChange={(e) => {setLoginInfo(prev => ({...prev, email:e.target.value}))}}
                 />
                 <div className="relative h-fit">
-                <label htmlFor="password" className="block login-inputTitle">Password</label>
+                <label htmlFor="password" className="max-sm:text-[13px] sm:text-sm md:text-sm lg:text-base block">Password</label>
                 <input 
                     type={`${showPass? "text" : "password"}`}
                     id="password"
-                    placeholder="Enter password" 
-                    className='login-input border w-full px-2 py-1 mb-4 rounded'
+                    placeholder="Enter password here" 
+                    className='max-sm:text-[13px] sm:text-sm md:text-sm lg:text-base border border-gray-500 w-full px-2 py-1 mb-4 rounded'
                     onChange={(e) => {setLoginInfo(prev => ({...prev, password:e.target.value}))}}
                 />
                 <FontAwesomeIcon 
                     icon={showPass? faEye: faEyeLowVision}
                     onClick={() => setShowPass(!showPass)}
-                    className="show-logpass absolute right-4 bottom-6 cursor-pointer text-sm text-gray-600"
+                    className="max-sm:text-[11px] sm:text-xs md:text-xs lg:text-sm absolute right-4 bottom-6 cursor-pointer text-gray-600"
                     />
                 </div>
                 <button 
                     type="submit" 
-                    className="login-button w-full text-xl font-bold text-white px-2 py-1 bg-gray-700 mb-4 rounded hover:bg-gray-600 cursor-pointer">Login
+                    className="w-full max-sm:text-sm sm:text-base md:text-base lg:text-xl font-bold text-white px-2 py-1 bg-gray-700 mb-4 rounded hover:bg-gray-600 cursor-pointer">Login
                 </button>
-                
-                <p className="login-text text-sm mb-4">Don't have an account yet? &nbsp;
+                <p className="max-sm:text-[11px] sm:text-xs md:text-xs lg:text-sm">Don't have an account yet? &nbsp;
                     <button 
-                        className="underline text-blue-700 hover:text-blue-900 cursor-pointer" 
-                        onClick={() => {setSign(!sign); setLog(!log)}}>Sign Up Here. 
+                        className="underline decoration-2 font-bold text-blue-700 hover:text-blue-900 cursor-pointer" 
+                        onClick={() => {setSign(!sign); setLog(!log)}}>Sign Up Now. 
                     </button>
                 </p>
             </div>
         </form>
-        
     </div>}
         {sign && <SignUp/>}
     </> )

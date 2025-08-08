@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Toaster } from 'react-hot-toast'
-import Nav from "@/src/components/NavBar";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css' // Import the CSS manually
 config.autoAddCss = false // Prevent automatic addition of CSS
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "800"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -30,11 +26,10 @@ export default function RootLayout({
 
 
   return (
-    <html lang="en">
+    <html lang="en" className={poppins.variable}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`antialiased`}
       >
-        
         {children}
         <Toaster position="top-center" reverseOrder={false} />
       </body>

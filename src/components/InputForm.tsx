@@ -23,13 +23,13 @@ export default function Form() {
   if (!state) return null;
   return (
     <div className="fixed inset-0 z-99 flex items-center justify-center bg-black/30 backdrop-blur-sm">
-    <div ref={popCardRef} className="form-container w-[23rem] h-fit flex flex-col gap-10 fixed z-99">
+    <div ref={popCardRef} className="max-sm:w-[18.5rem] sm:w-[20rem] md:w-[20rem] lg:w-[23rem] flex flex-col gap-10 fixed z-99">
       <form 
         onSubmit={(e) => {handleSubmit(e, form, setForm, fileInputRef,setState)}} 
         className=" px-0 py-8 bg-white shadow-2xl rounded-md flex flex-col items-center gap-6">
-          <h1 className="form-title text-4xl font-bold mb-2 text-shadow-2xs">ADD ARTWORK</h1>
+          <h1 className="max-sm:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 text-shadow-2xs">ADD ARTWORK</h1>
             <div className="w-[80%] flex flex-col gap-1">
-                  <label htmlFor="title" className="text-base form-label">Artwork Name: </label>
+                  <label htmlFor="title" className="max-sm:text-xs sm:text-sm md:text-sm lg:text-base">Artwork Name: </label>
                   <input  
                     type="text" 
                     id="title" 
@@ -37,23 +37,23 @@ export default function Form() {
                     value= {form.title} 
                     placeholder="Enter artwork name" 
                     onChange={(e) => handleChange(e, setForm)} 
-                    className="form-name border-1 rounded-xs pl-1"/>
-                  <label htmlFor="description" className="form-label">Description:</label>
+                    className="max-sm:text-xs sm:text-sm md:text-sm lg:text-base w-full border-1 rounded-xs pl-1"/>
+                  <label htmlFor="description" className="max-sm:text-xs sm:text-sm md:text-sm lg:text-base">Description:</label>
                   <textarea 
                     id="description" 
                     value={form.description}
                     maxLength={700} 
                     onChange={(e) => handleChange(e, setForm)} 
-                    className="form-name resize-none border-1 rounded px-1" 
+                    className="max-sm:text-xs sm:text-sm md:text-sm lg:text-base w-full resize-none border-1 rounded px-1" 
                     rows={5} 
                     placeholder='Enter artwork description here...'/>
-                  <label htmlFor="date" className=" text-base form-label">Date Created: </label>
+                  <label htmlFor="date" className="max-sm:text-xs sm:text-sm md:text-sm lg:text-base">Date Created: </label>
                   <input 
                     type="date" 
                     id="date"  
                     value= {form.date} 
                     onChange={(e) => handleChange(e, setForm)} 
-                    className="form-name border-1 rounded-xs pl-1 w-fill "/>
+                    className="max-sm:text-xs sm:text-sm md:text-sm lg:text-base w-full border-1 rounded-xs pl-1 w-fill "/>
                   <input 
                     type="file" 
                     ref={fileInputRef}
@@ -63,13 +63,13 @@ export default function Form() {
                     className="hidden"/>
                 <label 
                   htmlFor="file" 
-                  className={`self-center form-label text-center shadow-[2px_2px_5px_gray] rounded-md py-1.5 px-3 w-fit cursor-pointer my-5`}>
+                  className={`max-sm:text-xs sm:text-sm md:text-sm lg:text-base self-center text-center shadow-[2px_2px_5px_gray] rounded-md py-1.5 px-3 w-fit cursor-pointer my-5`}>
                     {form.fileName}
                 </label>
                 <button 
                   type="submit" 
-                  className="bg-gray-800 form-label font-bold text-white rounded-md px-7 py-2 hover:bg-gray-500 cursor-pointer"
-                  >Add
+                  className="max-sm:text-xs sm:text-sm md:text-sm lg:text-base bg-gray-800 font-bold text-white rounded-md px-7 py-2 hover:bg-gray-500 cursor-pointer"
+                  >ADD
                 </button>
             </div>
       </form>

@@ -116,19 +116,19 @@ export default function CardContainer() {
 
   return (
     <section className={`w-full ${currentCards.length === 0 ? 'h-[94vh]': 'h-fit '} flex flex-col items-center relative bg-white shadow-[1px_1px_5px_gray] py-2 px-2 rounded-md mb-4`}>
-        <div className="flex  w-full items-center justify-between px-5 mt-3">
+        <div className="flex  w-full items-center justify-between px-7 mt-3">
             { currentCards.length !== 0 ?
                 <div className="flex gap-4">
                     
                     <button 
                     onClick={() => setSortAsc(prev => !prev)}
-                    className="gallery-sort w-fit h-fit px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 font-bold shadow-[0px_0px_2px_black] cursor-pointer"
+                    className="max-sm:px-3 max-sm:py-1 sm:px-3 sm:py-1 md:px-3.5 md:py-1.5 lg:px-4 lg:py-2 w-fit h-fit  rounded-md bg-gray-200 hover:bg-gray-300 font-bold shadow-[0px_0px_2px_black] cursor-pointer"
                         >
                     {sortAsc ? <FontAwesomeIcon icon={faArrowUpAZ}/>: <FontAwesomeIcon icon={faArrowDownAZ}/>}
                     </button>
                     
                     <select
-                            className="gallery-filter w-fit h-fit shadow-[0px_0px_2px_black] px-3 py-2  bg-gray-300 rounded-md font-bold text-base  cursor-pointer"
+                            className="max-sm:px-1.5 max-sm:py-1 sm:px-2 sm:py-1 md:px-2.5 md:py-1.5 lg:px-3 lg:py-2 w-fit h-fit shadow-[0px_0px_2px_black]   bg-gray-300 rounded-md font-bold text-base  cursor-pointer"
                             onChange={(e) =>
                                 setFilterDate(e.target.value === "all" ? null : e.target.value)
                             }
@@ -146,13 +146,13 @@ export default function CardContainer() {
         <div>
         <FontAwesomeIcon 
             icon={faPlus} 
-            className="gallery-add text-gray-800 text-3xl cursor-pointer z-98 hover:text-black hover:scale-110 transition-all ease-in-out duration-300" 
+            className="max-sm:text-xl sm:text-xl md:text-2xl lg:text-3xl text-gray-800 cursor-pointer z-98 hover:text-black hover:scale-110 transition-all ease-in-out duration-300" 
             onClick={() => setAdd(!add)}/>
         {add && <Form />}
         </div>
         </div>
         <div 
-            className="gallery-container text-3xl font-bold place-items-center w-full p-4  grid grid-cols-4 gap-4 grid-rows-2 grid-flow-row auto-rows-auto">
+            className="max-sm:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid text-3xl font-bold place-items-center w-full p-4   gap-4 grid-rows-2 grid-flow-row auto-rows-auto">
         { isLoading ? "Loading..." :  
         currentCards.length === 0 ? "No artworks yet" :  
         (

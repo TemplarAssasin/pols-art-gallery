@@ -48,11 +48,11 @@ export default function Nav() {
                 <span className={`max-md:hidden group-hover:w-full transition-all duration-250 ease-in-out absolute bottom-0 left-0 ${select === 'gallery' ? 'w-full': 'w-0'} h-0.5 bg-gray-700 `} />
               </li>
             </Link>
-            <Link href="/about" onClick={() => handleSelect('about')}>
+            {/* <Link href="/about" onClick={() => handleSelect('about')}>
               <li className="relative group">About 
                 <span className={`max-md:hidden group-hover:w-full transition-all duration-250 ease-in-out absolute bottom-0 left-0 ${select === 'about' ? 'w-full': 'w-0'} h-0.5 bg-gray-700 `} />
               </li>
-            </Link>
+            </Link> */}
             <Link href="/account" onClick={() => handleSelect('account')}>
               <li className="relative group">Account 
                 <span className={`max-md:hidden group-hover:w-full transition-all duration-250 ease-in-out absolute bottom-0 left-0 ${select === 'account' ? 'w-full': 'w-0'} h-0.5 bg-gray-700 `} />

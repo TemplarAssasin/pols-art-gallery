@@ -1,9 +1,9 @@
-import Login from "@/src/components/Login"
+import LoginForm from "@/src/components/Login"
 
-export default function page() {
+export default function Login() {
   return (
     <div className="w-full h-screen flex justify-center items-center">
-        <Login/>
+        <LoginForm/>
     </div>
   )
 }
