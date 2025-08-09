@@ -42,7 +42,7 @@ export default function PopCard({
         <article
             className="overflow-auto max-sm:w-[75%] max-sm:h-[50%] sm:w-[60%] sm:h-[60%] md:w-[60%] md:h-[70%] lg:w-[70%] lg:h-[80%] fixed inset-0 top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-49  bg-white rounded shadow-2xl
             ">
-            <div className="absolute right-3 top-2">               
+            <div className={`absolute right-3 top-2 ${isImageFull? 'z-0':'z-1'}`}>               
                 <FontAwesomeIcon 
                     icon={faPenToSquare} 
                     className="max-sm:text-sm sm:text-base md:text-xl lg:text-2xl  peer cursor-pointer text-gray-800 hover:text-gray-900 hover:scale-120 transition-all ease-in-out duration-300"
